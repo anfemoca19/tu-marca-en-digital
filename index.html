@@ -278,8 +278,159 @@ h1{
   padding:68px 0 72px;
 }
 .offer-grid{display:grid; grid-template-columns:.82fr 1.3fr 1fr; gap:28px; align-items:center}
-.price-badge{display:flex; justify-content:center}
-.badge-circle{width:162px; height:162px}
+.price-badge{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:220px;
+}
+
+.promo-seal-v11{
+  position:relative;
+  width:194px;
+  height:194px;
+  border-radius:50%;
+  padding:3px;
+  background:
+    linear-gradient(135deg,#ff31c6 0%,#b729ff 38%,#ff7b28 72%,#ffd35c 100%);
+  box-shadow:
+    0 24px 52px rgba(255,37,187,.28),
+    0 0 38px rgba(255,129,31,.18);
+}
+
+.promo-seal-v11::before{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    0 0 30px rgba(209,37,255,.15);
+}
+
+.promo-seal-v11::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.09);
+  pointer-events:none;
+}
+
+.promo-seal-inner-v11{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 38% 24%,rgba(255,255,255,.12),transparent 27%),
+    radial-gradient(circle at 72% 74%,rgba(255,42,185,.18),transparent 34%),
+    linear-gradient(155deg,#251544 0%,#15183d 46%,#0a1535 100%);
+  box-shadow:
+    inset 0 0 38px rgba(255,255,255,.035),
+    inset 0 -24px 42px rgba(0,0,0,.18);
+}
+
+.promo-seal-kicker-v11{
+  margin-bottom:7px;
+  font-size:9px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.18em;
+  color:#ffcf67;
+  text-transform:uppercase;
+}
+
+.promo-seal-title-v11{
+  max-width:125px;
+  font-size:20px;
+  line-height:.93;
+  font-weight:1000;
+  letter-spacing:-.04em;
+  color:#fff;
+  text-transform:uppercase;
+}
+
+.promo-seal-line-v11{
+  width:44px;
+  height:2px;
+  margin:11px 0 9px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ff31c6,#ff9f25);
+}
+
+.promo-seal-sub-v11{
+  font-size:9px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.12em;
+  color:#dfe5ff;
+  text-transform:uppercase;
+}
+
+.promo-spark-v11{
+  position:absolute;
+  top:-19px;
+  right:-11px;
+  z-index:4;
+  width:62px;
+  height:62px;
+  filter:drop-shadow(0 8px 15px rgba(255,117,34,.32));
+  transform:rotate(7deg);
+}
+
+.promo-spark-v11 svg{
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+.promo-shine-v11{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.promo-shine-v11::before{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-70%;
+  width:45%;
+  height:160%;
+  transform:rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+  animation:sealShineV11 5.8s ease-in-out infinite;
+}
+
+@keyframes sealShineV11{
+  0%,62%{left:-70%}
+  78%,100%{left:135%}
+}
+
+@media(max-width:680px){
+  .price-badge{min-height:190px}
+  .promo-seal-v11{
+    width:170px;
+    height:170px;
+  }
+  .promo-seal-title-v11{font-size:18px}
+  .promo-spark-v11{
+    width:54px;
+    height:54px;
+    top:-16px;
+    right:-8px;
+  }
+}
 .offer-pill{display:inline-block; padding:8px 16px; border-radius:999px; background:rgba(255,255,255,.12); font-size:12px; font-weight:900; letter-spacing:.06em}
 .offer h2{margin:12px 0 4px; font-size:34px; letter-spacing:-.03em}
 .price{font-size:clamp(56px, 7vw, 88px); line-height:.94; font-weight:1000; letter-spacing:-.05em; color:var(--yellow)}
@@ -318,7 +469,6 @@ h1{
 .trust-icon svg{width:34px; height:34px; stroke:#17234b; fill:none; stroke-width:1.8}
 .trust-text strong{display:block; font-size:14px}
 .trust-text span{display:block; font-size:12px; color:#66748f; margin-top:3px}
-footer{padding:26px 0; background:#07102d; color:#9ca8cb; font-size:12px; text-align:center}
 
 .mobile-toggle{display:none; width:42px; height:42px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.06); align-items:center; justify-content:center}
 .mobile-toggle svg{width:22px; height:22px; stroke:#fff; fill:none; stroke-width:1.8}
@@ -607,10 +757,11 @@ footer{padding:26px 0; background:#07102d; color:#9ca8cb; font-size:12px; text-a
     margin:auto;
   }
 
-  .mockup-before-v9{order:2}
-  .mockup-after-v9{order:4}
   .before-side-v9{order:1}
-  .after-side-v9{order:5}
+  .mockup-before-v9{order:2}
+  .between-mockups-v9{order:3}
+  .after-side-v9{order:4}
+  .mockup-after-v9{order:5}
 }
 
 </style>
@@ -942,19 +1093,39 @@ footer{padding:26px 0; background:#07102d; color:#9ca8cb; font-size:12px; text-a
   <div class="container">
     <div class="offer-grid">
       <div class="price-badge">
-        <svg class="badge-circle" viewBox="0 0 180 180" aria-hidden="true">
-          <defs>
-            <linearGradient id="circleGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ff25be"/>
-              <stop offset="1" stop-color="#ff9118"/>
-            </linearGradient>
-          </defs>
-          <circle cx="90" cy="90" r="52" fill="#8b1662" opacity=".92"/>
-          <circle cx="90" cy="90" r="58" fill="none" stroke="url(#circleGrad)" stroke-width="6"/>
-          <path d="M120 33c8 4 13 12 13 22 0 14-10 25-23 28 2-4 3-8 3-12 0-11-7-20-17-24 5-9 14-16 24-14Z" fill="#ff9d1a"/>
-          <text x="90" y="78" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter, sans-serif" font-weight="900">PRECIO</text>
-          <text x="90" y="96" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter, sans-serif" font-weight="900">ESPECIAL</text>
-        </svg>
+        <div class="promo-seal-v11" aria-label="Precio especial">
+          <div class="promo-seal-inner-v11">
+            <span class="promo-seal-kicker-v11">OFERTA ACTUAL</span>
+            <span class="promo-seal-title-v11">PRECIO<br>ESPECIAL</span>
+            <span class="promo-seal-line-v11"></span>
+            <span class="promo-seal-sub-v11">TU MARCA DIGITAL</span>
+            <span class="promo-shine-v11"></span>
+          </div>
+
+          <div class="promo-spark-v11" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <defs>
+                <linearGradient id="sparkGradV11" x1="9" y1="5" x2="54" y2="58">
+                  <stop offset="0" stop-color="#FFE36D"/>
+                  <stop offset=".48" stop-color="#FF9A24"/>
+                  <stop offset="1" stop-color="#FF3A9B"/>
+                </linearGradient>
+                <filter id="sparkGlowV11" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2.6" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path d="M31 4c2 12 6 18 17 21-11 3-15 9-17 21-2-12-6-18-17-21C25 22 29 16 31 4Z"
+                    fill="url(#sparkGradV11)" filter="url(#sparkGlowV11)"/>
+              <path d="M50 35c1 6 3 9 9 10-6 2-8 5-9 11-1-6-3-9-9-11 6-1 8-4 9-10Z"
+                    fill="#FFD85A"/>
+              <circle cx="12" cy="13" r="2.2" fill="#FF4FCB"/>
+            </svg>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -1057,11 +1228,6 @@ footer{padding:26px 0; background:#07102d; color:#9ca8cb; font-size:12px; text-a
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="container">HTML real · inspirado en la referencia visual entregada · mockups incorporados sin usar emojis.</div>
-</footer>
-
 <script>
   const countdownHours = 7;
   const end = new Date(Date.now() + countdownHours * 60 * 60 * 1000);
